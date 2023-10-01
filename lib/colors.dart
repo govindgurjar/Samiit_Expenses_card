@@ -5,4 +5,6 @@ class MyColors {
   static Color labourCost = Color(0xFFEADE94);
   static Color fuel = Color(0xFFC4A56E);
   static Color others = Color(0xFF805F0C);
+  static Color service = Color(0xFF15172C);
+  static Color onTapColor = Color(0xFF202237);
 }

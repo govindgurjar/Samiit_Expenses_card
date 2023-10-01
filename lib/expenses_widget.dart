@@ -1,4 +1,5 @@
 import 'package:fleet_vision/colors.dart';
+import 'package:fleet_vision/detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:pie_chart/pie_chart.dart';
@@ -41,13 +42,23 @@ class _HomePageState extends State<HomePage> {
                                 fontWeight: FontWeight.w700, fontSize: 27),
                           ),
                         ),
-                        Text(
-                          'View Details',
-                          style: GoogleFonts.roboto(
-                            textStyle: const TextStyle(
-                                fontWeight: FontWeight.w400,
-                                fontSize: 15,
-                                color: Colors.blue),
+                        InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => DetailPage(),
+                              ),
+                            );
+                          },
+                          child: Text(
+                            'View Details',
+                            style: GoogleFonts.roboto(
+                              textStyle: const TextStyle(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 15,
+                                  color: Colors.blue),
+                            ),
                           ),
                         ),
                       ],
@@ -64,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                     Row(
                       children: [
                         const SizedBox(width: 10),
-                        PieChartWidget(
+                        const PieChartWidget(
                           maintenanceCost: 3200,
                           labourCost: 1500,
                           fuelCost: 1000,
@@ -148,9 +159,9 @@ class PieChartWidget extends StatelessWidget {
               MyColors.maintenance,
               MyColors.labourCost,
               MyColors.fuel,
-              MyColors.others
+              MyColors.others,
             ],
-            initialAngleInDegree: 0,
+            initialAngleInDegree: -80,
             chartType: ChartType.ring,
             ringStrokeWidth: 16,
             centerText: null,
